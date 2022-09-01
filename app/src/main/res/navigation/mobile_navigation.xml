@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.educationhub.mobi.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_course_detail"
+            app:destination="@id/nav_course_detail" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_career"
+        android:name="com.educationhub.mobi.ui.career.CareerFragment"
+        android:label="Career"
+        tools:layout="@layout/fragment_career" />
+    <fragment
+        android:id="@+id/nav_progress"
+        android:name="com.educationhub.mobi.ui.progress.ProgressFragment"
+        android:label="Progress"
+        tools:layout="@layout/fragment_progress" >
+        <action
+            android:id="@+id/action_nav_progress_to_nav_course_learn"
+            app:destination="@id/nav_course_learn" />
+        <action
+            android:id="@+id/action_nav_progress_to_nav_home"
+            app:destination="@id/nav_home"
+            app:popUpTo="@id/nav_home"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_setting"
+        android:name="com.educationhub.mobi.ui.setting.menu.SettingFragment"
+        android:label="Setting"
+        tools:layout="@layout/fragment_setting">
+        <action
+            android:id="@+id/action_nav_setting_to_nav_policy"
+            app:destination="@id/nav_policy" />
+        <action
+            android:id="@+id/action_nav_setting_to_helpFragment"
+            app:destination="@id/nav_help" />
+        <action
+            android:id="@+id/action_nav_setting_to_blogFragment"
+            app:destination="@id/nav_blog_list" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_certificate_list"
+        android:name="com.educationhub.mobi.ui.certificate.list.CertificateListFragment"
+        android:label="Certificates"
+        tools:layout="@layout/fragment_certificate_list" >
+        <action
+            android:id="@+id/action_nav_certificate_list_to_certificateDetailFragment"
+            app:destination="@id/nav_certificate_detail" />
+        <action
+            android:id="@+id/action_nav_certificate_list_to_nav_progress"
+            app:destination="@id/nav_progress"
+            app:popUpTo="@id/nav_home"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_policy"
+        android:name="com.educationhub.mobi.ui.setting.policy.PolicyFragment"
+        android:label="Policy"
+        tools:layout="@layout/fragment_policy" />
+    <fragment
+        android:id="@+id/nav_help"
+        android:name="com.educationhub.mobi.ui.setting.help.HelpFragment"
+        android:label="Help"
+        tools:layout="@layout/fragment_help" />
+    <fragment
+        android:id="@+id/nav_blog_list"
+        android:name="com.educationhub.mobi.ui.setting.blog.list.BlogListFragment"
+        android:label="Blogs"
+        tools:layout="@layout/fragment_blog_list"/>
+    <fragment
+        android:id="@+id/nav_certificate_detail"
+        android:name="com.educationhub.mobi.ui.certificate.detail.CertificateDetailFragment"
+        android:label="Cretificate Detail"
+        tools:layout="@layout/fragment_certificate_detail" >
+        <argument
+            android:name="courseTitle"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_course_detail"
+        android:name="com.educationhub.mobi.ui.course.detail.CourseDetailFragment"
+        android:label="Course Detail"
+        tools:layout="@layout/fragment_course_detail" >
+        <argument
+            android:name="courseIdx"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_nav_course_detail_to_nav_progress"
+            app:destination="@id/nav_progress"
+            app:popUpTo="@id/nav_home"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_course_learn"
+        android:name="com.educationhub.mobi.ui.course.learn.CourseLearnFragment"
+        android:label="Course Learn"
+        tools:layout="@layout/fragment_course_learn">
+        <action
+            android:id="@+id/action_courseLearnFragment_to_courseAssessmentFragment"
+            app:destination="@id/nav_course_assessment" />
+        <argument
+            android:name="courseId"
+            app:argType="string" />
+        <argument
+            android:name="courseTitle"
+            app:argType="string" />
+        <argument
+            android:name="currentSlide"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_course_assessment"
+        android:name="com.educationhub.mobi.ui.course.assessment.CourseAssessmentFragment"
+        android:label="Course Assessment"
+        tools:layout="@layout/fragment_course_assessment" >
+        <argument
+            android:name="courseId"
+            app:argType="string" />
+        <argument
+            android:name="courseTitle"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_nav_course_assessment_to_nav_course_assessment_fail"
+            app:destination="@id/nav_course_assessment_fail" />
+        <action
+            android:id="@+id/action_nav_course_assessment_to_courseAssessmentPassFragment"
+            app:destination="@id/nav_course_assessment_pass" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_course_assessment_fail"
+        android:name="com.educationhub.mobi.ui.course.assessment.CourseAssessmentFailFragment"
+        android:label="Assessment Failed"
+        tools:layout="@layout/fragment_course_assessment_fail" />
+    <fragment
+        android:id="@+id/nav_course_assessment_pass"
+        android:name="com.educationhub.mobi.ui.course.assessment.CourseAssessmentPassFragment"
+        android:label="Course Passed"
+        tools:layout="@layout/fragment_course_assessment_pass" >
+        <action
+            android:id="@+id/action_nav_course_assessment_pass_to_nav_certificate_detail"
+            app:destination="@id/nav_certificate_detail"
+            app:popUpTo="@id/nav_home"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="score"
+            app:argType="float" />
+        <argument
+            android:name="courseTitle"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
