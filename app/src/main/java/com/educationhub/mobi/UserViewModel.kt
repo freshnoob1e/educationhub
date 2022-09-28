@@ -9,15 +9,17 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.Dispatchers
-import java.lang.Exception
 
 class UserViewModel(private val repository: UserRepository = UserRepository()) : ViewModel() {
     private var auth: FirebaseAuth = Firebase.auth
     var currentUser: FirebaseUser? = null
 
-    fun getCurrentUser() {
+    //    Get current user, if have user, check if user is anonymous
+    //    if user is not authenticated, login user as anonymous and return false,
+    //    else set user and return true
+    fun getCurrentUser(): Boolean {
         currentUser = auth.currentUser
-        if (currentUser != null) {
+        return if (currentUser != null) {
             currentUser!!.getIdToken(true).addOnCompleteListener { t ->
                 try {
                     t.result
@@ -25,17 +27,30 @@ class UserViewModel(private val repository: UserRepository = UserRepository()) :
                     getCurrentUser()
                 }
             }
+            if (currentUser!!.isAnonymous) {
+                return false
+            }
+            true
         } else {
             signinUserAnonymous()
+            false
         }
     }
 
     private fun signinUserAnonymous() {
-        auth.signInAnonymously()
+        auth.signInAnonymously().addOnCompleteListener {
+            if (it.exception != null) {
+                Log.e("AnonymousSignIn", it.exception.toString())
+            }
+            currentUser = auth.currentUser
+        }
     }
 
     val userInfoResponseLiveData = liveData(Dispatchers.IO) {
         emit(repository.getUserInfoResponse(currentUser!!.uid))
     }
 
+    fun logoutUser() {
+        auth.signOut()
+    }
 }

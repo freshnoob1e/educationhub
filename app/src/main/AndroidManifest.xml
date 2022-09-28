@@ -14,7 +14,14 @@
         android:theme="@style/Theme.Drawer"
         tools:targetApi="31">
         <activity
-            android:name="com.educationhub.mobi.MainActivity"
+            android:name=".AuthenticationActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.Drawer.NoActionBar">
             <intent-filter>

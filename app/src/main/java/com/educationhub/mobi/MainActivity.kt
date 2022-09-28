@@ -1,20 +1,19 @@
 package com.educationhub.mobi
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import com.google.android.material.navigation.NavigationView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
 import com.educationhub.mobi.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,9 +22,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -40,11 +36,11 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment: NavHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
         val navController = navHostFragment.findNavController()
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_home,
+                R.id.nav_profile,
                 R.id.nav_career,
                 R.id.nav_setting,
                 R.id.nav_progress,
@@ -68,7 +64,7 @@ class MainActivity : AppCompatActivity() {
                     R.id.nav_policy,
                     R.id.nav_help,
                     R.id.nav_blog_list,
-
+                    R.id.nav_profile
                 ) -> {
                     navView.visibility = View.GONE
                     navBottomView.visibility = View.GONE
@@ -95,22 +91,14 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    override fun onStart() {
-        super.onStart()
-    }
-
     override fun onSupportNavigateUp(): Boolean {
         val navController =
             findNavController(R.id.nav_host_fragment_content_main)
-        if(navController.currentDestination?.id == R.id.nav_certificate_detail){
+        if (navController.currentDestination?.id == R.id.nav_certificate_detail) {
             navController.popBackStack(R.id.nav_home, true)
             navController.navigate(R.id.nav_certificate_list)
             return super.onSupportNavigateUp()
         }
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
-    }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
     }
 }

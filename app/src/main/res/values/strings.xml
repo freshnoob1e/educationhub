@@ -1,18 +1,12 @@
 <resources>
     <string name="app_name">Education Hub</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Education Hub</string>
     <string name="nav_header_subtitle">Knowledge is power!</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
     <string name="bottom_menu_home">Home</string>
     <string name="bottom_menu_progress">Progress</string>
-    <string name="bottom_menu_profile">Profile</string>
     <string name="menu_profile">Profile</string>
     <string name="bottom_menu_certificate">Certificate</string>
     <string name="menu_setting">Setting</string>
@@ -24,10 +18,8 @@
     <string name="what_will_i_learn">What Will I Learn?</string>
     <string name="add_new_course">Add New Course</string>
 
-    <string name="progress_percentage">%d\% Completed</string>
     <string name="continue_btn_text">Continue</string>
     <string name="courses">Courses</string>
-    <string name="search">Search</string>
     <string name="tap_to_continue">Tap to continue</string>
     <string name="submit">Submit</string>
     <string name="you_passed">You Passed!</string>
@@ -38,21 +30,30 @@
     <string name="join_us_at_education_hub">Join us at Education Hub!</string>
     <string name="we_are_a_values_based_workplace_working_on_an_ethical_product_that_truly_helps_others_and_fundamentally_changes_lives_for_the_better_we_have_employees_who_care_deeply_with_many_personally_impacted_by_tobacco_or_nicotine">We are a values-based workplace, working on an ethical product that truly helps others and fundamentally changes lives for the better. We have employees who care deeply, with many personally impacted by tobacco or nicotine.</string>
     <string name="our_mission_is_to_bring_everyone_the_inspiration_to_create_a_life_they_love_and_that_includes_our_employees">Our mission is to bring everyone the inspiration to create a life they love – and that includes our employees.</string>
-    <string name="general">General</string>
-    <string name="notification">Notification</string>
-    <string name="extra">Extra</string>
     <string name="help_faq"><![CDATA[Help & FAQ]]></string>
     <string name="official_blog">Official Blog</string>
     <string name="terms_privacy_policy"><![CDATA[Terms & Privacy Policy]]></string>
     <string name="help">Help</string>
     <string name="need_help_contact_our_customer_services_as">Need help? Contact our customer services as:</string>
-    <string name="help_hotline_number">Hotline: 016-924 5966</string>
+    <string name="help_hotline_number">Hotline: 016–924 5966</string>
     <string name="email_support_educationhub_com">Email: support@educationhub.com</string>
-    <string name="tns_lorem">Suspendisse tristique mi mi, nec condimentum mi consectetur in. Vestibulum faucibus tempus ligula ut eleifend. Duis commodo rutrum aliquam. Curabitur cursus neque rhoncus urna euismod sodales. Mauris auctor ante dui, at faucibus urna luctus in. Maecenas ac libero commodo, accumsan ex ac, varius ipsum. Integer ultricies, sapien at facilisis accumsan, sem neque molestie odio, vel posuere magna lacus sit amet nisi. Nunc eget accumsan sapien. Morbi at congue eros.Nunc volutpat dignissim dignissim. Integer vel ultrices erat, non posuere ante. Phasellus convallis mi diam, sit amet fermentum ante cursus nec. Donec quis turpis bibendum, iaculis enim ac, facilisis libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis nec sem nec libero placerat vehicula. Morbi id lectus lacus. Sed vel accumsan odio. Suspendisse quis mauris diam. Sed id maximus libero. Curabitur finibus, risus quis sollicitudin varius, sem justo sodales risus, ultricies sodales urna ligula ut mauris. Proin nisl nisi, mollis at mollis eu, vehicula sed enim. Donec suscipit orci vulputate dolor feugiat, sed pharetra sapien sodales. Suspendisse sagittis tortor non ipsum vulputate finibus. In commodo mauris sapien, eu euismod tortor placerat sed. Suspendisse potenti.Nulla vitae vehicula urna. Nam et tincidunt ex. Integer eu nibh augue. Maecenas a sodales lectus, in consectetur dolor. Donec gravida sit amet erat maximus sagittis. Donec eu libero convallis, ullamcorper arcu vel, lobortis ipsum. Donec eu erat id lectus volutpat consequat quis quis quam. Nunc eget lacinia metus. Vestibulum accumsan, metus a euismod sollicitudin, sapien nulla congue metus, volutpat sodales magna lorem in ex. Duis dapibus faucibus leo et imperdiet.Mauris libero felis, rhoncus eu sodales ut, tincidunt a est. Proin tincidunt lacus at odio tristique, vel congue velit auctor. Aliquam vel nulla ipsum. Suspendisse fringilla enim sit amet commodo auctor. Sed feugiat at felis nec pulvinar. In porta ante sit amet augue tristique, vel dictum lorem pulvinar. Integer vestibulum, eros sit amet tincidunt fermentum, mi libero feugiat mauris, ac feugiat turpis ligula et quam. Vivamus dapibus tellus ut nisi viverra eleifend. Phasellus et nisl quis sapien lacinia feugiat. Curabitur quis congue magna, sit amet faucibus metus.Ut accumsan diam a augue aliquet consequat. Aenean in tortor tristique, auctor nulla eget, luctus justo. Vivamus eget arcu sed ligula egestas semper. Nunc molestie ex at ante pretium egestas. In efficitur convallis tortor vel laoreet. Vivamus ipsum metus, varius a nibh sed, tempor elementum orci. Curabitur eu est mauris. Donec vitae lacus nunc. Proin commodo eros sit amet ante bibendum ultrices. Maecenas id tempor dui, sit amet maximus justo. Maecenas vehicula fermentum erat, vitae ornare augue consequat ac. Aliquam scelerisque turpis ante, in cursus libero porta vel. In hac habitasse platea dictumst. Phasellus eget malesuada ex. Sed iaculis justo non condimentum congue.
+    <string name="tns_lorem">Suspendisse tristique mi, nec condimentum mi consectetur in. Vestibulum faucibus tempus ligula ut eleifend. Duis commodo rutrum aliquam. Curabitur cursus neque rhoncus urna euismod sodales. Mauris auctor ante dui, at faucibus urna luctus in. Maecenas ac libero commodo, accumsan ex ac, varius ipsum. Integer ultricies, sapien at facilisis accumsan, sem neque molestie odio, vel posuere magna lacus sit amet nisi. Nunc eget accumsan sapien. Morbi at congue eros.Nunc volutpat dignissim. Integer vel ultrices erat, non posuere ante. Phasellus convallis mi diam, sit amet fermentum ante cursus nec. Donec quis turpis bibendum, iaculis enim ac, facilisis libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis nec sem nec libero placerat vehicula. Morbi id lectus lacus. Sed vel accumsan odio. Suspendisse quis mauris diam. Sed id maximus libero. Curabitur finibus, risus quis sollicitudin varius, sem justo sodales risus, ultricies sodales urna ligula ut mauris. Proin nisl nisi, mollis at mollis eu, vehicula sed enim. Donec suscipit orci vulputate dolor feugiat, sed pharetra sapien sodales. Suspendisse sagittis tortor non ipsum vulputate finibus. In commodo mauris sapien, eu euismod tortor placerat sed. Suspendisse potenti.Nulla vitae vehicula urna. Nam et tincidunt ex. Integer eu nibh augue. Maecenas a sodales lectus, in consectetur dolor. Donec gravida sit amet erat maximus sagittis. Donec eu libero convallis, ullamcorper arcu vel, lobortis ipsum. Donec eu erat id lectus volutpat consequat quis quam. Nunc eget lacinia metus. Vestibulum accumsan, metus a euismod sollicitudin, sapien nulla congue metus, volutpat sodales magna lorem in ex. Duis dapibus faucibus leo et imperdiet.Mauris libero felis, rhoncus eu sodales ut, tincidunt a est. Proin tincidunt lacus at odio tristique, vel congue velit auctor. Aliquam vel nulla ipsum. Suspendisse fringilla enim sit amet commodo auctor. Sed feugiat at felis nec pulvinar. In porta ante sit amet augue tristique, vel dictum lorem pulvinar. Integer vestibulum, eros sit amet tincidunt fermentum, mi libero feugiat mauris, ac feugiat turpis ligula et quam. Vivamus dapibus tellus ut nisi viverra eleifend. Phasellus et nisl quis sapien lacinia feugiat. Curabitur quis congue magna, sit amet faucibus metus.Ut accumsan diam a augue aliquet consequat. Aenean in tortor tristique, auctor nulla eget, luctus justo. Vivamus eget arcu sed ligula egestas semper. Nunc molestie ex at ante pretium egestas. In efficitur convallis tortor vel laoreet. Vivamus ipsum metus, varius a nibh sed, tempor elementum orci. Curabitur eu est mauris. Donec vitae lacus nunc. Proin commodo eros sit amet ante bibendum ultrices. Maecenas id tempor dui, sit amet maximus justo. Maecenas vehicula fermentum erat, vitae ornare augue consequat ac. Aliquam scelerisque turpis ante, in cursus libero porta vel. In hac habitasse platea dictumst. Phasellus eget malesuada ex. Sed iaculis justo non condimentum congue.
     </string>
-    <string name="education_hub">Education Hub</string>
-    <string name="everyone_can_learn">Everyone can learn</string>
     <string name="you_have_not_enrolled_in_a_course_yet_enroll_a_course_to_start_learning">You have not enrolled in a course yet, enroll a course to start learning!</string>
     <string name="start_learning">Start Learning</string>
     <string name="you_have_not_completed_a_course_yet_complete_a_course_to_get_certificate">You have not completed a course yet, complete a course to get certificate</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="don_t_have_an_account_yet">Don\'t have an account yet?</string>
+    <string name="register_now">Register now</string>
+    <string name="app_logo">App Logo</string>
+    <string name="register">Register</string>
+    <string name="username">Username</string>
+    <string name="full_name">Full name</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="login_now">Login now</string>
+    <string name="you_are_not_logged_in_login_to_view_your_profile">You are not logged in, login to view your profile</string>
+    <string name="user_s_avatar_image">User\'s avatar image</string>
+    <string name="logout">LOGOUT</string>
 </resources>

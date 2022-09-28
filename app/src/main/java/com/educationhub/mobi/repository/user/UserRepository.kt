@@ -1,11 +1,12 @@
 package com.educationhub.mobi.repository.user
 
 import android.util.Log
+import com.educationhub.mobi.model.EnrolledCourse
 import com.educationhub.mobi.model.UserInfo
 import com.educationhub.mobi.repository.course.CourseRepository
-import com.educationhub.mobi.model.EnrolledCourse
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.DocumentSnapshot
+import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.tasks.await
@@ -23,7 +24,10 @@ class UserRepository {
 
             response.UserInfo = UserInfo(
                 userDoc.id,
-                enrolledCourses
+                enrolledCourses,
+                userDoc.data?.get("username") as String?,
+                userDoc.data?.get("fullName") as String?,
+                userDoc.data?.get("avatarImageURL") as String?
             )
         }
         return response
@@ -37,7 +41,10 @@ class UserRepository {
 
             return UserInfo(
                 userDoc.id,
-                enrolledCourses
+                enrolledCourses,
+                userDoc.data?.get("username") as String?,
+                userDoc.data?.get("fullName") as String?,
+                userDoc.data?.get("avatarImageURL") as String?,
             )
         }
         return null
@@ -70,13 +77,14 @@ class UserRepository {
 
     private suspend fun createUserInfo(userId: String): DocumentSnapshot {
         val userData = hashMapOf(
-            "uid" to userId
+            "uid" to userId,
         )
-        return db.collection("users").add(userData).await().get().await()
+        db.collection("users").document(userId).set(userData, SetOptions.merge()).await()
+        return db.collection("users").document(userId).get().await()
     }
 
     suspend fun updateUserEnroll(userId: String, courseId: String)
-    : Int {
+            : Int {
         // 1 = enroll success | 0 = already enrolled | -1 = something went wrong
         val userDoc = getUserInfoDoc(userId)
 

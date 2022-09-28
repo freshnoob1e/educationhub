@@ -1,12 +1,11 @@
 package com.educationhub.mobi.ui.course.detail
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -14,9 +13,7 @@ import com.educationhub.mobi.UserViewModel
 import com.educationhub.mobi.databinding.FragmentCourseDetailIndexTabBinding
 import com.educationhub.mobi.repository.user.UserRepository
 import com.educationhub.mobi.ui.course.list.CourseListViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.withContext
 
 class CourseDetailIndexTabFragment : Fragment() {
 
@@ -49,7 +46,6 @@ class CourseDetailIndexTabFragment : Fragment() {
     }
 
     private fun enrollCourse() {
-
         runBlocking {
             val status = UserRepository().updateUserEnroll(
                 userViewModel.currentUser!!.uid,
