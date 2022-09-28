@@ -5,6 +5,6 @@ data class Course(
     var title: String? = null,
     val difficulty: Int? = null,
     var description: String? = null,
-    val started: Boolean? = null,
+    val thumbnail: String? = null,
     var course_learning_outcomes: List<CourseLearningOutcome>? = null
 )

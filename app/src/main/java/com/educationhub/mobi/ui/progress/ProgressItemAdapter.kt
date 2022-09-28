@@ -1,6 +1,5 @@
 package com.educationhub.mobi.ui.progress
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.educationhub.mobi.R
 import com.educationhub.mobi.repository.progress.ProgressListResponse
 
@@ -16,7 +16,7 @@ class ProgressItemAdapter(progressListResponse: ProgressListResponse) :
     RecyclerView.Adapter<ProgressItemAdapter.ItemViewHolder>() {
     private val progressList = progressListResponse.progress
 
-    class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+    class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val headerTextView: TextView = view.findViewById(R.id.card_header_title_text)
         val progressPercentageTextView: TextView = view.findViewById(R.id.progress_percentage_text)
         val courseImageView: ImageView = view.findViewById(R.id.course_image_view)
@@ -37,9 +37,11 @@ class ProgressItemAdapter(progressListResponse: ProgressListResponse) :
             holder.headerTextView.text = currentProgress.courseInfo?.title
             val currentProgressPercentage: Int =
                 ((currentProgress.currentSlide!!.toFloat() / currentProgress.courseNumOfSlides!!.toFloat()) * 100).toInt()
-            holder.progressPercentageTextView.text = "${currentProgressPercentage}% Completed"
-            // TODO add course thumbnail
-//            holder.courseImageView.load(currentProgress.courseInfo.thumbnail)
+            val percentageText = "${currentProgressPercentage}% Completed"
+            holder.progressPercentageTextView.text = percentageText
+            if (!currentProgress.courseInfo?.thumbnail.isNullOrEmpty()) {
+                holder.courseImageView.load(currentProgress.courseInfo!!.thumbnail)
+            }
             holder.mainTitleTextView.text = currentProgress.courseInfo?.title
             holder.continueBtn.setOnClickListener {
                 val action = ProgressFragmentDirections.actionNavProgressToNavCourseLearn(
@@ -53,7 +55,10 @@ class ProgressItemAdapter(progressListResponse: ProgressListResponse) :
     }
 
     override fun getItemCount(): Int {
-        return progressList!!.size
+        if (progressList == null) {
+            return 0
+        }
+        return progressList.size
     }
 
 }

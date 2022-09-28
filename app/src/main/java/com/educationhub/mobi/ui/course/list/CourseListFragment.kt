@@ -1,16 +1,16 @@
 package com.educationhub.mobi.ui.course.list
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.educationhub.mobi.UserViewModel
 import com.educationhub.mobi.databinding.FragmentCourseListBinding
+import com.educationhub.mobi.repository.course.CourseListResponse
 
 class CourseListFragment : Fragment() {
 
@@ -35,8 +35,15 @@ class CourseListFragment : Fragment() {
         val root: View = binding.root
 
         val recyclerView: RecyclerView = binding.courseListRecyclerView
+        recyclerView.adapter = CourseItemAdapter(CourseListResponse())
+        val loader: ProgressBar = binding.courseImageLoader
         courseViewModel.courseListResponseLiveData.observe(viewLifecycleOwner) {
             recyclerView.adapter = CourseItemAdapter(it)
+            if(it != null){
+                loader.visibility = View.GONE
+            } else {
+                loader.visibility = View.VISIBLE
+            }
         }
         recyclerView.hasFixedSize()
 

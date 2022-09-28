@@ -4,13 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.educationhub.mobi.databinding.FragmentCertificateListBinding
+import com.educationhub.mobi.repository.certificate.CertificateResponse
 
 class CertificateListFragment : Fragment() {
 
@@ -29,12 +29,16 @@ class CertificateListFragment : Fragment() {
         _binding = FragmentCertificateListBinding.inflate(inflater, container, false)
         val root: View = binding.root
         val recyclerView: RecyclerView = binding.completedCourseRecycler
+        recyclerView.adapter = CertificateItemAdapter(CertificateResponse())
+        val loader: ProgressBar = binding.courseImageLoader
         certificateViewModel.getCertificateResponse()
         certificateViewModel.certResponseLiveData.observe(viewLifecycleOwner) {
             if (it!!.completedCourses == null || it.completedCourses!!.isEmpty()) {
                 binding.emptyCourseText.visibility = View.VISIBLE
+                loader.visibility = View.GONE
             } else {
                 binding.emptyCourseText.visibility = View.GONE
+                loader.visibility = View.GONE
                 recyclerView.adapter = CertificateItemAdapter(it)
             }
         }

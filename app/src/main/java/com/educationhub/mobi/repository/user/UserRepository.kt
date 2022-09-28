@@ -76,7 +76,8 @@ class UserRepository {
     }
 
     suspend fun updateUserEnroll(userId: String, courseId: String)
-    : Int { // 1 = enroll success | 0 = already enrolled | -1 = something went wrong
+    : Int {
+        // 1 = enroll success | 0 = already enrolled | -1 = something went wrong
         val userDoc = getUserInfoDoc(userId)
 
         val currentEnrolledCoursesDocs = getUserEnrolledCoursesDocs(userId)
@@ -145,7 +146,6 @@ class UserRepository {
 
     suspend fun updateUserEnrolledCourseCurrentSlide(courseId: String, slideNum: Int) {
         val userInfoCourseDoc = getUserEnrolledCourseDoc(auth.currentUser!!.uid, courseId)
-        val temp =
-            db.document(userInfoCourseDoc.reference.path).update("current_slide", slideNum).await()
+        db.document(userInfoCourseDoc.reference.path).update("current_slide", slideNum).await()
     }
 }

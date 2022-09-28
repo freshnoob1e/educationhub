@@ -1,6 +1,5 @@
 package com.educationhub.mobi.repository.course
 
-import android.util.Log
 import com.educationhub.mobi.model.*
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.ktx.firestore
@@ -23,7 +22,8 @@ class CourseRepository {
                         document.id,
                         document.data?.get("title") as String,
                         (document.data?.get("difficulty") as Number).toInt(),
-                        document.data?.get("description") as String
+                        document.data?.get("description") as String,
+                        document.data?.get("thumbnail") as String
                     )
                 )
             }
@@ -41,7 +41,8 @@ class CourseRepository {
             doc.data?.get("title") as String,
             doc.data?.get("difficulty").toString().toInt(),
             doc.data?.get("description") as String,
-            false,
+            doc.data?.get("thumbnail") as String,
+            null
         )
     }
 
