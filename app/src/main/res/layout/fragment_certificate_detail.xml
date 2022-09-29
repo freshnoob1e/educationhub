@@ -7,6 +7,7 @@
     tools:context=".ui.certificate.detail.CertificateDetailFragment">
 
     <RelativeLayout
+        android:id="@+id/cert_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -62,5 +63,16 @@
             tools:text="test text" />
 
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_share_cert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="30dp"
+        android:text="@string/share"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

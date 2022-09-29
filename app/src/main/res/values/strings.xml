@@ -56,4 +56,5 @@
     <string name="you_are_not_logged_in_login_to_view_your_profile">You are not logged in, login to view your profile</string>
     <string name="user_s_avatar_image">User\'s avatar image</string>
     <string name="logout">LOGOUT</string>
+    <string name="share">SHARE</string>
 </resources>

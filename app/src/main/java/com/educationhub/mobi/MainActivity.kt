@@ -1,5 +1,6 @@
 package com.educationhub.mobi
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -99,6 +100,20 @@ class MainActivity : AppCompatActivity() {
             navController.navigate(R.id.nav_certificate_list)
             return super.onSupportNavigateUp()
         }
+
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    override fun onBackPressed() {
+        val navController =
+            findNavController(R.id.nav_host_fragment_content_main)
+        if (navController.currentDestination?.id == R.id.nav_certificate_detail) {
+            val intent = Intent(this, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
+            finish()
+        } else {
+            super.onBackPressed()
+        }
     }
 }
