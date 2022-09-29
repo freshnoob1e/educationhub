@@ -33,7 +33,7 @@ class CertificateItemAdapter(certificateResponse: CertificateResponse) :
         val currentCourse = certificateList?.get(position)
         if (currentCourse != null) {
             holder.headerTextView.text = currentCourse.courseInfo?.title
-            if(!currentCourse.courseInfo?.thumbnail.isNullOrEmpty()){
+            if (!currentCourse.courseInfo?.thumbnail.isNullOrEmpty()) {
                 holder.courseImageView.load(currentCourse.courseInfo!!.thumbnail)
             }
             holder.continueBtn.setOnClickListener {

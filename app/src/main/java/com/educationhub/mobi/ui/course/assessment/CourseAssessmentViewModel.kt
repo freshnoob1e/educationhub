@@ -1,7 +1,6 @@
 package com.educationhub.mobi.ui.course.assessment
 
 import android.os.CountDownTimer
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -38,7 +37,7 @@ class CourseAssessmentViewModel(private val repository: CourseRepository = Cours
     val timeOut: MutableLiveData<Boolean> = MutableLiveData<Boolean>(false)
 
     fun setCountdownTimerAndStart(time: Long) {
-        if(timer != null){
+        if (timer != null) {
             timer!!.cancel()
         }
         _countdownTimer = time
@@ -76,10 +75,10 @@ class CourseAssessmentViewModel(private val repository: CourseRepository = Cours
                 }
             }
         }
-        return ((correctQuestion / numOfQuestions.toFloat())*100).roundToInt().toFloat()
+        return ((correctQuestion / numOfQuestions.toFloat()) * 100).roundToInt().toFloat()
     }
 
-    fun setAnswer(questionIdx: Int, answerString: String){
+    fun setAnswer(questionIdx: Int, answerString: String) {
         answers[questionIdx] = answerString
     }
 

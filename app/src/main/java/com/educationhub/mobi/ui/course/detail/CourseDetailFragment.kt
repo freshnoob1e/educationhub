@@ -1,7 +1,6 @@
 package com.educationhub.mobi.ui.course.detail
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,8 +13,6 @@ import androidx.viewpager2.widget.ViewPager2
 import coil.load
 import com.educationhub.mobi.R
 import com.educationhub.mobi.databinding.FragmentCourseDetailBinding
-import com.educationhub.mobi.model.CourseOverview
-import com.educationhub.mobi.repository.course.CourseOverviewResponse
 import com.educationhub.mobi.ui.course.list.CourseListViewModel
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -44,7 +41,6 @@ class CourseDetailFragment : Fragment() {
 
         val courseTitleTextView: TextView = binding.courseTitleText
 
-        var courseDescription: String = ""
         val currentCourseId =
             courseViewModel.courseListResponseLiveData.value!!.courses!![args.courseIdx].id
         courseViewModel.setCurrentCourseId(currentCourseId)
@@ -52,7 +48,6 @@ class CourseDetailFragment : Fragment() {
 
         courseViewModel.courseListResponseLiveData.observe(viewLifecycleOwner) {
             courseTitleTextView.text = it.courses!![args.courseIdx].title
-            courseDescription = it.courses!![args.courseIdx].description.toString()
         }
 
         courseViewModel.courseOverviewResponseLiveData.observe(viewLifecycleOwner) {
@@ -74,8 +69,7 @@ class CourseDetailFragment : Fragment() {
         viewPager.adapter = TabAdapter(this)
         val tabLayout: TabLayout = binding.courseOverviewTabLayout
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-            var toSetText: String = ""
-            toSetText = when (position) {
+            val toSetText: String = when (position) {
                 0 -> getString(R.string.description)
                 1 -> getString(R.string.index)
                 else -> ""

@@ -3,14 +3,11 @@ package com.educationhub.mobi.ui.course.detail
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.TextView
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.educationhub.mobi.R
 import com.educationhub.mobi.model.CourseLearningOutcome
 import com.educationhub.mobi.repository.course.CourseOverviewResponse
-import com.educationhub.mobi.ui.home.HomeFragmentDirections
 
 class OutcomeItemAdapter(
     courseOverviewResponse: CourseOverviewResponse
@@ -38,7 +35,7 @@ class OutcomeItemAdapter(
     }
 
     override fun getItemCount(): Int {
-        if (dataset == null){
+        if (dataset == null) {
             return 0
         }
         return dataset.size

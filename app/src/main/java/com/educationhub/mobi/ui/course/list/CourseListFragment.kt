@@ -39,7 +39,7 @@ class CourseListFragment : Fragment() {
         val loader: ProgressBar = binding.courseImageLoader
         courseViewModel.courseListResponseLiveData.observe(viewLifecycleOwner) {
             recyclerView.adapter = CourseItemAdapter(it)
-            if(it != null){
+            if (it != null) {
                 loader.visibility = View.GONE
             } else {
                 loader.visibility = View.VISIBLE

@@ -1,19 +1,15 @@
 package com.educationhub.mobi.ui.course.assessment
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
-import androidx.navigation.findNavController
+import android.widget.RadioButton
+import android.widget.RadioGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.educationhub.mobi.R
 import com.educationhub.mobi.model.AssessmentQuestion
-import com.educationhub.mobi.model.CourseAssessment
-import com.educationhub.mobi.model.CourseLearningOutcome
 import com.educationhub.mobi.repository.course.CourseAssessmentResponse
-import com.educationhub.mobi.repository.course.CourseOverviewResponse
-import com.educationhub.mobi.ui.home.HomeFragmentDirections
 
 class CourseAssessmentItemAdapter(
     courseAssessmentResponse: CourseAssessmentResponse,
@@ -41,7 +37,7 @@ class CourseAssessmentItemAdapter(
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val currentCourseQuestion = dataset?.get(position)
-        val qText = "Q${position+1}. ${currentCourseQuestion!!.question}"
+        val qText = "Q${position + 1}. ${currentCourseQuestion!!.question}"
         holder.questionText.text = qText
         holder.radioOne.text = currentCourseQuestion.answers!![0].text
         holder.radioTwo.text = currentCourseQuestion.answers[1].text

@@ -5,7 +5,6 @@ import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.tasks.await
-import java.lang.Exception
 
 class CourseRepository {
     private val db = Firebase.firestore

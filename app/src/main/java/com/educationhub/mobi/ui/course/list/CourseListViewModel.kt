@@ -1,10 +1,11 @@
 package com.educationhub.mobi.ui.course.list
 
-import android.util.Log
-import androidx.lifecycle.*
-import com.educationhub.mobi.repository.course.CourseRepository
-import com.educationhub.mobi.model.Course
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
 import com.educationhub.mobi.repository.course.CourseOverviewResponse
+import com.educationhub.mobi.repository.course.CourseRepository
 import kotlinx.coroutines.Dispatchers
 
 class CourseListViewModel(private val repository: CourseRepository = CourseRepository()) :
@@ -32,11 +33,11 @@ class CourseListViewModel(private val repository: CourseRepository = CourseRepos
         }
     }
 
-    fun setCurrentCourseId(newCourseId: String?){
+    fun setCurrentCourseId(newCourseId: String?) {
         _currentCourseId.value = newCourseId
     }
 
-    fun setCurrentCourseIdx(newCourseIdx: Int){
+    fun setCurrentCourseIdx(newCourseIdx: Int) {
         _currentCourseIdx.value = newCourseIdx
     }
 }

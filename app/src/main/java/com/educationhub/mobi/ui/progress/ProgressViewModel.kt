@@ -1,7 +1,6 @@
 package com.educationhub.mobi.ui.progress
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.educationhub.mobi.repository.progress.ProgressListResponse
@@ -17,7 +16,7 @@ class ProgressViewModel(private val repository: ProgressRepository = ProgressRep
         getProgressListResponseLiveData()
     }
 
-    fun getProgressListResponseLiveData(){
+    fun getProgressListResponseLiveData() {
         progressListResponseLiveData = liveData(Dispatchers.IO) {
             emit(repository.getEnrolledCourse())
         }

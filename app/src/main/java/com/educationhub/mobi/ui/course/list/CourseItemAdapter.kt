@@ -50,7 +50,7 @@ class CourseItemAdapter(
     }
 
     override fun getItemCount(): Int {
-        if(dataset == null){
+        if (dataset == null) {
             return 0
         }
         return dataset.size

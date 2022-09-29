@@ -1,6 +1,6 @@
 package com.educationhub.mobi.model
 
-data class CourseContentSlide (
+data class CourseContentSlide(
     val id: String? = null,
     val slideNum: Int? = null,
     val title: String? = null,

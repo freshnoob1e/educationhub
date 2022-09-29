@@ -1,6 +1,5 @@
 package com.educationhub.mobi.ui.setting.blog.list
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,12 +9,12 @@ import com.educationhub.mobi.R
 import com.educationhub.mobi.model.Blog
 import com.educationhub.mobi.repository.blog.BlogListResponse
 
-class BlogItemAdapter(private val blogListResponse: BlogListResponse) :
+class BlogItemAdapter(blogListResponse: BlogListResponse) :
     RecyclerView.Adapter<BlogItemAdapter.ItemViewHolder>() {
 
     private val dataset: List<Blog>? = blogListResponse.blogs
 
-    class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+    class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val titleText: TextView = view.findViewById(R.id.blog_title)
         val contentText: TextView = view.findViewById(R.id.blog_content)
     }

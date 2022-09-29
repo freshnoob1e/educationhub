@@ -9,7 +9,7 @@ import com.google.firebase.ktx.Firebase
 class CertificateRepository {
     private val auth = Firebase.auth
 
-    suspend fun getCompletedCourse(): CertificateResponse{
+    suspend fun getCompletedCourse(): CertificateResponse {
         val response = CertificateResponse()
 
         val userInfo: UserInfo? = UserRepository().getUserInfo(auth.currentUser?.uid!!)
@@ -17,8 +17,8 @@ class CertificateRepository {
         val allEnrolledCourse = userInfo!!.courseEnrolled
         val completedCourse = mutableListOf<EnrolledCourse>()
 
-        for(x in allEnrolledCourse!!){
-            if(x.currentSlide == x.courseNumOfSlides){
+        for (x in allEnrolledCourse!!) {
+            if (x.currentSlide == x.courseNumOfSlides) {
                 completedCourse.add(x)
             }
         }

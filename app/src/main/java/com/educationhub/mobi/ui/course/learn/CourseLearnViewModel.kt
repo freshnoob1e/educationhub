@@ -1,6 +1,5 @@
 package com.educationhub.mobi.ui.course.learn
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -49,13 +48,13 @@ class CourseLearnViewModel(
     fun setCurrentSlide(slideNum: Int) {
         _currentSlide.value = slideNum
         runBlocking {
-            withContext(Dispatchers.IO){
+            withContext(Dispatchers.IO) {
                 userRepo.updateUserEnrolledCourseCurrentSlide(courseId!!, slideNum)
             }
         }
     }
 
-    fun completeCourse(){
+    fun completeCourse() {
         setCurrentSlide(maxSlide)
     }
 

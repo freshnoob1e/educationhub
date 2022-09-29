@@ -1,13 +1,10 @@
 package com.educationhub.mobi.ui.certificate.list
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.educationhub.mobi.repository.certificate.CertificateRepository
 import com.educationhub.mobi.repository.certificate.CertificateResponse
-import com.educationhub.mobi.repository.course.CourseRepository
-import com.educationhub.mobi.repository.user.UserRepository
 import kotlinx.coroutines.Dispatchers
 
 class CertificateListViewModel(private val repository: CertificateRepository = CertificateRepository()) :
